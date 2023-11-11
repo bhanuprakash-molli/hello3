@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story Reader</title>
+    <link href='https://fonts.googleapis.com/css?family=Mukta' rel='stylesheet'>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            max-width: 700px;
+            min-height: 700px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-sizing:border-box;
+           box-shadow: 0px 10px 20px 5px rgba(160, 248, 248, 0.7);
+            /* box-shadow: 0px 10px 20px 2px rgba(8, 7, 7, 0.1); */
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        button {
+            /* display: none; */
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            /* justify-content: flex-start; */
+            /* cursor: pointer; */
+            /* float: inline-end; */
+
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+        #text{
+            font-size: 20px;
+            line-height: 2.5;
+            min-height: 100%;
+            min-width: 100%;
+            border: 0px solid;
+            font-family: 'Mukta';
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- STORY TITLE -->
+        <h1>The man who moved a mountain</h1>
+    </header>
+    <main>
+       <nav> <h1>Chapter 1</h1></nav>
+        <div id="text"></div>
+        <!-- <footer><button id="next-button">Next Chapter</button></footer> -->
+    </main>
+
+    <script>
+       
+        
+        const textElement = document.getElementById("text");
+        const text = `Once upon a time in a quaint village nestled between rolling hills and lush greenery, lived a young girl named Maya. Maya was an ordinary girl with an extraordinary dream – she aspired to become the first person from her village to reach the summit of the towering mountain that loomed in the distance. The villagers, while supportive, doubted the feasibility of such a feat. The mountain was notorious for its treacherous paths and unpredictable weather, and no one had dared to conquer it.
+
+Undeterred by skepticism, Maya spent her days exploring the outskirts of the village, training her body, and learning survival skills from the wise elders. She faced setbacks and challenges but embraced each one as a lesson rather than a failure. Her unwavering determination caught the attention of an old mountaineer who had once attempted the climb but was forced to turn back.
+
+Impressed by Maya's spirit, the old mountaineer, named Master Rai, decided to become her mentor. He shared his knowledge of the mountain's terrain, weather patterns, and the importance of mental resilience. Maya absorbed every piece of wisdom, using it to fuel her ambition.
+
+As the day of the expedition approached, the village gathered to bid farewell to Maya. The air was filled with a mix of excitement and anxiety. The elders blessed her, the children looked up to her with wide-eyed admiration, and her friends offered words of encouragement.
+
+The journey was grueling, with steep ascents, unpredictable weather, and moments of self-doubt. Yet, whenever Maya felt her strength waver, she remembered the faces of the villagers who believed in her and the dream that fueled her every step.
+
+After days of relentless effort, Maya finally stood at the summit, clouds swirling around her. The view was breathtaking, and the sense of accomplishment overwhelmed her. She planted a small flag with her village emblem, signifying not only her personal victory but the triumph of determination over doubt.
+
+Word of Maya's achievement spread like wildfire, reaching the ears of her fellow villagers. The news became a source of inspiration for generations to come. Maya's story taught them that even the most daunting challenges could be overcome with perseverance, belief in oneself, and the support of a community.
+
+Maya's triumphant return to the village was met with jubilation. The once-skeptical villagers now saw her as a living testament to the power of motivation. Maya, in turn, continued to inspire others by sharing her experiences and encouraging them to pursue their dreams, no matter how audacious they may seem.
+
+And so, in the heart of that humble village, the spirit of motivation and the belief in the extraordinary became a legacy, passed down from one generation to the next, ensuring that dreams, no matter how lofty, were always within reach for those willing to chase them.`;
+        let index = 0;
+
+        function type() {
+          if (index < text.length) {
+            textElement.innerHTML += text.charAt(index);
+            index++;
+            setTimeout(type, 80);
+          }
+        }
+        type();
+        // if(type()){
+       
+        // }
+    </script>
+</body>
+</html>
